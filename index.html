@@ -4,6 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>MIDNIGHT.NEWS — Every hour has a story.</title>
 
 <style>
@@ -66,13 +67,14 @@ header {
 .logo {
   font-family: Georgia, serif;
   font-size: clamp(42px, 8vw, 76px);
-  font-weight: bold;
+  font-weight: 400;
   letter-spacing: -4px;
   line-height: 1;
 }
 
 .logo span {
   color: var(--green);
+  font-weight: 400;
 }
 
 .tagline {
@@ -108,6 +110,31 @@ header {
   padding: 45px 0 25px;
 }
 
+.feature-info {
+  padding: 0 0 22px;
+}
+
+.category {
+  color: var(--green);
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.feature-info h1 {
+  font-family: Georgia, serif;
+  font-weight: 400;
+  font-size: clamp(26px, 5vw, 43px);
+  line-height: 1.15;
+  margin: 10px 0;
+}
+
+.feature-info p {
+  color: #c4c4bd;
+  max-width: 650px;
+  font-size: 14px;
+}
+
 .amanda-image {
   position: relative;
   width: 100%;
@@ -134,39 +161,7 @@ header {
   display: block;
 }
 
-.feature-info {
-  padding: 20px 0 0;
-}
-
-.category {
-  color: var(--green);
-  font-size: 11px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-}
-
-.feature-info h1 {
-  font-family: Georgia, serif;
-  font-size: clamp(26px, 5vw, 43px);
-  line-height: 1.15;
-  margin: 10px 0;
-}
-
-.feature-info p {
-  color: #c4c4bd;
-  max-width: 650px;
-  font-size: 14px;
-}
-
-.read-link {
-  display: inline-block;
-  color: var(--green);
-  font-size: 11px;
-  letter-spacing: 2px;
-  margin-top: 17px;
-}
-
-/* VIDEOS DIRECTLY UNDER AMANDA */
+/* VIDEOS */
 
 .video-section {
   padding: 10px 0 45px;
@@ -230,6 +225,7 @@ header {
 
 .story-content h2 {
   font-family: Georgia, serif;
+  font-weight: 400;
   font-size: clamp(19px, 2.5vw, 27px);
   line-height: 1.2;
   margin: 7px 0;
@@ -259,6 +255,7 @@ footer {
 
 .footer-logo {
   font-family: Georgia, serif;
+  font-weight: 400;
   color: var(--white);
   font-size: 25px;
   letter-spacing: -1px;
@@ -308,12 +305,16 @@ footer {
 
 <body>
 
+<!-- TOP LINE -->
+
 <div class="topline">
   <div class="container topline-inner">
     <span>Independent Digital Magazine</span>
     <span id="tokyo-clock">TOKYO — --:--</span>
   </div>
 </div>
+
+<!-- HEADER -->
 
 <header>
   <div class="container">
@@ -330,7 +331,26 @@ footer {
 
     <div class="section-heading">Featured Story</div>
 
+    <div class="feature-info">
+
+      <div class="category">
+        Travel · People · Inspiration
+      </div>
+
+      <h1>
+        MY FAVOURITE TRAVEL INFLUENCER — AMANDA KING
+      </h1>
+
+      <p>
+        Travel is more than visiting beautiful places. It is about
+        discovering new cultures, collecting experiences and seeing
+        the world from a different perspective.
+      </p>
+
+    </div>
+
     <div class="amanda-image">
+
       <img
         class="amanda-photo-backdrop"
         src="./amanda-king.png"
@@ -342,28 +362,12 @@ footer {
         src="./amanda-king.png"
         alt="Amanda King"
       >
-    </div>
-
-    <div class="feature-info">
-
-      <div class="category">Travel · People · Inspiration</div>
-
-      <h1>MY FAVOURITE TRAVEL INFLUENCER — AMANDA KING</h1>
-
-      <p>
-        Travel is more than visiting beautiful places. It is about
-        discovering new cultures, collecting experiences and seeing
-        the world from a different perspective.
-      </p>
-
-      <a class="read-link" href="#">
-        EDITORIAL FEATURE →
-      </a>
 
     </div>
+
   </section>
 
-  <!-- VIDEOS: NO WATCH HEADING -->
+  <!-- VIDEOS DIRECTLY UNDER AMANDA -->
 
   <section class="video-section">
 
@@ -408,6 +412,7 @@ footer {
       </div>
 
     </div>
+
   </section>
 
   <!-- STORIES -->
@@ -428,7 +433,9 @@ footer {
 
       <div class="story-content">
 
-        <div class="category">People · Culture · Interviews</div>
+        <div class="category">
+          People · Culture · Interviews
+        </div>
 
         <h2>EVERY STRANGER HAS A STORY</h2>
 
@@ -447,6 +454,7 @@ footer {
         </a>
 
       </div>
+
     </article>
 
     <!-- TIO TOKYO -->
@@ -461,7 +469,9 @@ footer {
 
       <div class="story-content">
 
-        <div class="category">People · Culture · Street Interviews</div>
+        <div class="category">
+          People · Culture · Street Interviews
+        </div>
 
         <h2>THE CITY HAS A VOICE</h2>
 
@@ -480,11 +490,14 @@ footer {
         </a>
 
       </div>
+
     </article>
 
   </section>
 
 </main>
+
+<!-- FOOTER -->
 
 <footer>
   <div class="container">
@@ -493,6 +506,8 @@ footer {
     <p style="margin-top:10px;">© 2026 MIDNIGHT.NEWS</p>
   </div>
 </footer>
+
+<!-- TOKYO CLOCK -->
 
 <script>
 function updateTokyoClock() {
