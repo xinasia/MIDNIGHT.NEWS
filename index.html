@@ -105,7 +105,7 @@ header {
 /* AMANDA FEATURE */
 
 .feature-section {
-  padding: 45px 0;
+  padding: 45px 0 25px;
 }
 
 .amanda-image {
@@ -166,11 +166,11 @@ header {
   margin-top: 17px;
 }
 
-/* VIDEOS */
+/* VIDEOS DIRECTLY UNDER AMANDA */
 
 .video-section {
-  padding: 35px 0 50px;
-  border-top: 1px solid var(--line);
+  padding: 10px 0 45px;
+  border-bottom: 1px solid var(--line);
 }
 
 .video-grid {
@@ -205,15 +205,14 @@ header {
 /* STORIES */
 
 .stories-section {
-  padding: 35px 0 60px;
-  border-top: 1px solid var(--line);
+  padding: 40px 0 60px;
 }
 
 .story-card {
   display: flex;
   align-items: center;
-  gap: 25px;
-  padding: 25px 0;
+  gap: 22px;
+  padding: 20px 0;
   border-bottom: 1px solid var(--line);
 }
 
@@ -231,15 +230,15 @@ header {
 
 .story-content h2 {
   font-family: Georgia, serif;
-  font-size: clamp(21px, 3vw, 30px);
+  font-size: clamp(19px, 2.5vw, 27px);
   line-height: 1.2;
   margin: 7px 0;
 }
 
 .story-content p {
   color: #c4c4bd;
-  font-size: 13px;
-  max-width: 650px;
+  font-size: 12px;
+  max-width: 550px;
 }
 
 .social {
@@ -274,7 +273,7 @@ footer {
   }
 
   .feature-section {
-    padding: 30px 0;
+    padding: 30px 0 20px;
   }
 
   .amanda-image {
@@ -286,7 +285,8 @@ footer {
   }
 
   .story-card {
-    gap: 15px;
+    gap: 14px;
+    align-items: flex-start;
   }
 
   .story-image {
@@ -296,11 +296,11 @@ footer {
   }
 
   .story-content h2 {
-    font-size: 20px;
+    font-size: 19px;
   }
 
   .story-content p {
-    font-size: 12px;
+    font-size: 11px;
   }
 }
 </style>
@@ -327,6 +327,7 @@ footer {
   <!-- AMANDA KING FEATURE -->
 
   <section class="feature-section">
+
     <div class="section-heading">Featured Story</div>
 
     <div class="amanda-image">
@@ -344,6 +345,7 @@ footer {
     </div>
 
     <div class="feature-info">
+
       <div class="category">Travel · People · Inspiration</div>
 
       <h1>MY FAVOURITE TRAVEL INFLUENCER — AMANDA KING</h1>
@@ -357,13 +359,13 @@ footer {
       <a class="read-link" href="#">
         EDITORIAL FEATURE →
       </a>
+
     </div>
   </section>
 
-  <!-- VIDEOS -->
+  <!-- VIDEOS: NO WATCH HEADING -->
 
   <section class="video-section">
-    <div class="section-heading">Watch</div>
 
     <div class="video-grid">
 
@@ -411,6 +413,7 @@ footer {
   <!-- STORIES -->
 
   <section class="stories-section">
+
     <div class="section-heading">Stories</div>
 
     <!-- PENGPENG XIAOHUI -->
@@ -424,6 +427,7 @@ footer {
       >
 
       <div class="story-content">
+
         <div class="category">People · Culture · Interviews</div>
 
         <h2>EVERY STRANGER HAS A STORY</h2>
@@ -441,8 +445,8 @@ footer {
           href="./pengpeng-xiaohui.html">
           READ STORY →
         </a>
-      </div>
 
+      </div>
     </article>
 
     <!-- TIO TOKYO -->
@@ -456,6 +460,7 @@ footer {
       >
 
       <div class="story-content">
+
         <div class="category">People · Culture · Street Interviews</div>
 
         <h2>THE CITY HAS A VOICE</h2>
@@ -473,8 +478,8 @@ footer {
           href="./tio-tokyo.html">
           READ STORY →
         </a>
-      </div>
 
+      </div>
     </article>
 
   </section>
