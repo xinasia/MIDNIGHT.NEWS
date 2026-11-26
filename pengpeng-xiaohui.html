@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,251 +7,360 @@
 
 <style>
 :root {
-  --bg:#303030;
-  --panel:#252825;
-  --green:#8BE5A8;
-  --white:#FAF9F4;
-  --muted:#aaa99f;
-  --line:#505050;
+  --bg: #303030;
+  --panel: #222522;
+  --green: #8BE5A8;
+  --white: #FAF9F4;
+  --muted: #92988f;
+  --line: #505050;
 }
 
-* {box-sizing:border-box}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
 body {
-  margin:0;
-  background:var(--bg);
-  color:var(--white);
-  font-family:Georgia,serif;
+  background: var(--bg);
+  color: var(--white);
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
 }
 
-a {text-decoration:none}
+a {
+  color: inherit;
+  text-decoration: none;
+}
 
-.topbar {
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:20px 5%;
-  border-bottom:1px solid var(--line);
+.container {
+  width: min(1100px, 90%);
+  margin: auto;
+}
+
+/* TOP LINE */
+
+.topline {
+  border-bottom: 1px solid var(--line);
+  padding: 10px 0;
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.topline-inner {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+/* HEADER */
+
+header {
+  padding: 35px 0 28px;
+  border-bottom: 1px solid var(--line);
 }
 
 .logo {
-  color:var(--green);
-  font-size:25px;
-  letter-spacing:3px;
-  font-weight:normal;
+  font-family: Georgia, serif;
+  font-size: clamp(42px, 8vw, 76px);
+  font-weight: 400;
+  letter-spacing: -4px;
+  line-height: 1;
 }
 
-.topbar span {
-  color:var(--muted);
-  font:10px Arial,sans-serif;
-  letter-spacing:2px;
+.logo span {
+  color: var(--green);
+  font-weight: 400;
 }
 
-main {
-  width:90%;
-  max-width:1180px;
-  margin:auto;
-  padding:30px 0 65px;
+.tagline {
+  margin-top: 10px;
+  color: var(--muted);
+  font-size: 13px;
+  letter-spacing: 2px;
 }
 
-.back {
-  display:inline-block;
-  color:var(--green);
-  font:10px Arial,sans-serif;
-  letter-spacing:1.5px;
-  margin-bottom:25px;
+/* FEATURE */
+
+.feature-section {
+  padding: 45px 0 25px;
 }
 
-.intro {
-  padding:10px 0 28px;
+.section-heading {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 24px;
+  font-size: 12px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--green);
+}
+
+.section-heading::after {
+  content: "";
+  height: 1px;
+  background: var(--line);
+  flex: 1;
+}
+
+.feature-info {
+  padding: 0 0 22px;
 }
 
 .category {
-  color:var(--green);
-  font:10px Arial,sans-serif;
-  letter-spacing:2.5px;
-  text-transform:uppercase;
+  color: var(--green);
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
 }
 
-h1 {
-  margin:15px 0 12px;
-  font-size:clamp(38px,5.5vw,66px);
-  line-height:1.05;
-  font-weight:normal;
-  letter-spacing:-1.5px;
+.feature-info h1 {
+  font-family: Georgia, serif;
+  font-weight: 400;
+  font-size: clamp(26px, 5vw, 43px);
+  line-height: 1.15;
+  margin: 10px 0;
 }
 
-.handle {
-  color:var(--muted);
-  font:10px Arial,sans-serif;
-  letter-spacing:1.5px;
+.feature-info p {
+  color: #c4c4bd;
+  max-width: 650px;
+  font-size: 14px;
 }
 
-.cover-wrap {
-  position:relative;
-  width:100%;
-  max-width:1000px;
-  height:510px;
-  margin:0 auto;
-  overflow:hidden;
-  background:var(--panel);
+/* IMAGE — SAME AS AMANDA */
+
+.amanda-image {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 21 / 9;
+  overflow: hidden;
+  background: #202020;
 }
 
-.cover-wrap::before {
-  content:"";
-  position:absolute;
-  inset:-20px;
-  background:url("./pengpeng-xiaohui.png") center/cover no-repeat;
-  filter:blur(22px) brightness(.55);
-  transform:scale(1.1);
+.amanda-photo-backdrop {
+  position: absolute;
+  inset: -25px;
+  width: calc(100% + 50px);
+  height: calc(100% + 50px);
+  object-fit: cover;
+  filter: blur(24px) brightness(.55);
 }
 
-.cover {
-  position:relative;
-  display:block;
-  width:100%;
-  height:100%;
-  object-fit:contain;
+.amanda-photo-main {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
 }
 
-.caption {
-  max-width:1000px;
-  margin:10px auto 0;
-  color:var(--muted);
-  font:9px Arial,sans-serif;
-  letter-spacing:1px;
-  text-align:right;
+/* STORY TEXT */
+
+.story-section {
+  padding: 30px 0 45px;
 }
 
-.story {
-  max-width:900px;
-  margin:38px auto 0;
+.story-section p {
+  color: #c4c4bd;
+  max-width: 650px;
+  font-size: 14px;
+  margin-bottom: 13px;
 }
 
-.story-label {
-  color:var(--green);
-  font:10px Arial,sans-serif;
-  letter-spacing:2.5px;
-  margin-bottom:18px;
+.story-quote {
+  color: var(--green);
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-size: 20px;
+  line-height: 1.5;
+  border-left: 2px solid var(--green);
+  padding-left: 18px;
+  margin: 24px 0;
+  max-width: 700px;
 }
 
-.story p {
-  font-size:17px;
-  line-height:1.8;
-  color:#e5e3dc;
-  margin:0 0 18px;
+.story-meta {
+  color: var(--muted);
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-top: 20px;
 }
 
-blockquote {
-  margin:30px 0;
-  padding:7px 0 7px 22px;
-  border-left:2px solid var(--green);
-  color:var(--green);
-  font-size:24px;
-  line-height:1.45;
+.back-link {
+  display: inline-block;
+  color: var(--green);
+  font-size: 11px;
+  letter-spacing: 1px;
+  margin-top: 25px;
 }
 
-.endline {
-  border-top:1px solid var(--line);
-  margin-top:35px;
-  padding-top:17px;
-  display:flex;
-  justify-content:space-between;
-  color:var(--muted);
-  font:9px Arial,sans-serif;
-  letter-spacing:1.5px;
-}
+/* FOOTER */
 
 footer {
-  border-top:1px solid var(--line);
-  padding:25px 5%;
-  display:flex;
-  justify-content:space-between;
-  color:var(--muted);
-  font:9px Arial,sans-serif;
-  letter-spacing:1.5px;
+  border-top: 1px solid var(--line);
+  padding: 30px 0;
+  text-align: center;
+  color: var(--muted);
+  font-size: 11px;
+  letter-spacing: 2px;
 }
 
-footer a {color:var(--green)}
+.footer-logo {
+  font-family: Georgia, serif;
+  font-weight: 400;
+  color: var(--white);
+  font-size: 25px;
+  letter-spacing: -1px;
+  margin-bottom: 8px;
+}
 
-@media(max-width:700px) {
-  .topbar {padding:17px 5%}
-  .topbar span {font-size:8px}
-  main {width:90%;padding-top:25px}
-  h1 {letter-spacing:-.5px}
-  .cover-wrap {height:390px}
-  .story {margin-top:30px}
-  .story p {font-size:16px;line-height:1.75}
-  blockquote {font-size:21px}
-  footer {gap:15px;flex-wrap:wrap}
+/* MOBILE — SAME AS HOMEPAGE */
+
+@media (max-width: 650px) {
+  .topline-inner {
+    font-size: 9px;
+  }
+
+  .feature-section {
+    padding: 30px 0 20px;
+  }
+
+  .amanda-image {
+    aspect-ratio: 16 / 9;
+  }
+
+  .story-section {
+    padding-top: 25px;
+  }
 }
 </style>
 </head>
 
 <body>
 
-<header class="topbar">
-  <a class="logo" href="./index.html">MIDNIGHT</a>
-  <span>EVERY HOUR HAS A STORY</span>
-</header>
+<!-- TOP LINE -->
 
-<main>
-
-<a class="back" href="./index.html">← BACK TO MIDNIGHT</a>
-
-<section class="intro">
-  <p class="category">PEOPLE · CULTURE · INTERVIEWS</p>
-  <h1>EVERY STRANGER HAS A STORY</h1>
-  <p class="handle">@PENGPENGXIAOHUI / PEOPLE FEATURE</p>
-</section>
-
-<div class="cover-wrap">
-  <img
-    class="cover"
-    src="./pengpeng-xiaohui.png"
-    alt="Pengpeng Xiaohui">
+<div class="topline">
+  <div class="container topline-inner">
+    <span>Independent Digital Magazine</span>
+    <span id="tokyo-clock">TOKYO — --:--</span>
+  </div>
 </div>
 
-<p class="caption">MIDNIGHT NEWS · EDITORIAL FEATURE</p>
+<!-- HEADER -->
 
-<article class="story">
-
-  <div class="story-label">THE STORY</div>
-
-  <p>
-    A simple conversation can reveal fascinating stories, unexpected
-    opinions and different perspectives on life. Street interviews
-    are more than just asking questions; they are about connecting
-    with people, discovering their thoughts and capturing genuine
-    human moments.
-  </p>
-
-  <p>
-    Pengpeng Xiaohui, known on social media as @pengpengxiaohui,
-    is a street interviewer whose content brings everyday people
-    and their stories into the spotlight. Through spontaneous
-    conversations and interesting questions, she creates engaging
-    moments that give viewers a glimpse into different personalities,
-    opinions and experiences.
-  </p>
-
-  <blockquote>
-    “Every stranger has a story, and every conversation is an
-    opportunity to discover something new.”
-  </blockquote>
-
-  <div class="endline">
-    <span>MIDNIGHT NEWS</span>
-    <span>PEOPLE · CULTURE</span>
+<header>
+  <div class="container">
+    <div class="logo">MIDNIGHT<span>.</span>NEWS</div>
+    <div class="tagline">EVERY HOUR HAS A STORY.</div>
   </div>
+</header>
 
-</article>
+<main class="container">
+
+  <section class="feature-section">
+
+    <div class="section-heading">People Feature</div>
+
+    <div class="feature-info">
+
+      <div class="category">
+        People · Culture · Interviews
+      </div>
+
+      <h1>EVERY STRANGER HAS A STORY</h1>
+
+      <p>
+        A simple conversation can reveal fascinating stories,
+        unexpected opinions and different perspectives on life.
+        Street interviews are more than just asking questions;
+        they are about connecting with people, discovering their
+        thoughts and capturing genuine human moments.
+      </p>
+
+    </div>
+
+    <div class="amanda-image">
+
+      <img
+        class="amanda-photo-backdrop"
+        src="./pengpeng-xiaohui.png"
+        alt=""
+        aria-hidden="true"
+      >
+
+      <img
+        class="amanda-photo-main"
+        src="./pengpeng-xiaohui.png"
+        alt="Pengpeng Xiaohui"
+      >
+
+    </div>
+
+  </section>
+
+  <section class="story-section">
+
+    <p>
+      Pengpeng Xiaohui, known on social media as @pengpengxiaohui,
+      is a street interviewer whose content brings everyday people
+      and their stories into the spotlight. Through spontaneous
+      conversations and interesting questions, she creates engaging
+      moments that give viewers a glimpse into different personalities,
+      opinions and experiences.
+    </p>
+
+    <div class="story-quote">
+      “Every stranger has a story, and every conversation is an
+      opportunity to discover something new.”
+    </div>
+
+    <div class="story-meta">
+      MIDNIGHT NEWS · PEOPLE · CULTURE
+    </div>
+
+    <a class="back-link" href="./index.html">
+      ← BACK TO MIDNIGHT
+    </a>
+
+  </section>
+
 </main>
 
+<!-- FOOTER -->
+
 <footer>
-  <span>© MIDNIGHT NEWS</span>
-  <a href="./index.html">BACK TO HOMEPAGE ↑</a>
+  <div class="container">
+    <div class="footer-logo">MIDNIGHT.NEWS</div>
+    <p>EVERY HOUR HAS A STORY.</p>
+    <p style="margin-top:10px;">© 2026 MIDNIGHT.NEWS</p>
+  </div>
 </footer>
+
+<!-- TOKYO CLOCK -->
+
+<script>
+function updateTokyoClock() {
+  const time = new Intl.DateTimeFormat("en-GB", {
+    timeZone: "Asia/Tokyo",
+    hour: "2-digit",
+    minute: "2-digit",
+    hour12: false
+  }).format(new Date());
+
+  document.getElementById("tokyo-clock").textContent =
+    "TOKYO — " + time;
+}
+
+updateTokyoClock();
+setInterval(updateTokyoClock, 30000);
+</script>
 
 </body>
 </html>
